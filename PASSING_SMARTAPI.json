@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "contact": {
+            "email": "nichollette.aco@gmail.com",
+            "name": "Nichollette",
+            "x-id": "https://github.com/nikkibytes/test_smartapi",
+            "x-role": "responsible developer"
+        },
+        "description": "Mock documentation for the BioThings API for BioPlanet pathway-gene data.",
+        "termsOfService": "https://biothings.io/about",
+        "title": "Mock BioThings BioPlanet Pathway-Gene API",
+        "version": "1.0",
+        "x-translator": {
+            "infores": "infores:mock-bioplanet",
+            "component": "KP",
+            "team": ["Mock Service Provider"],
+            "biolink-version": "mock-4.1.6"
+        }
+    },
+    "servers": [
+        {
+            "description": "Mock Production server",
+            "url": "https://mock.biothings.io/bioplanet_pathway_gene",
+            "x-maturity": "production"
+        }
+    ],
+    "tags": [
+        { "name": "mock-association" },
+        { "name": "mock-pathway" }
+    ],
+    "paths": {
+        "/mock/association/{id}": {
+            "get": {
+                "summary": "Retrieve mock association by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "x-responseValueType": [
+                            {
+                                "path": "mock-response.data",
+                                "valueType": "object"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
